@@ -38,7 +38,7 @@ if($result->num_rows == 0){
 }
 
 $result = $result->fetch_assoc();
-if(empty($result["updated"])){
+if(!array_key_exists("updated", $result)){
     $result["updated"] = $result["created"];
 }
 
