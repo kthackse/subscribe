@@ -59,6 +59,21 @@
                         echo "<p class=\"white bold margin-0 text-center\">Thank-you for registering, remember to check your inbox and confirm your email!</p>";
                         $_SESSION["status"] = "initial";
                     }
+                    else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "activated")){
+                        echo "<p class=\"white bold margin-top-only\">Your email has been confirmed, thank-you!</p>";
+                    }
+                    else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "database")){
+                        echo "<p class=\"white bold margin-top-only\">Internal error, please write to <a href=\"mailto:contact@kthack.com\" class=\"link-white bold\">contact@kthack.com</a>!</p>";
+                    }
+                    else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "registered")){
+                        echo "<p class=\"white bold margin-top-only\">You have already subscribed, but the email hasn't been confirmed yet, check the spam folder!</p>";
+                    }
+                    else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "confirmed")){
+                        echo "<p class=\"white bold margin-top-only\">You are already subscribed and confirmed!</p>";
+                    }
+                    else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "code")){
+                        echo "<p class=\"white bold margin-top-only\">The link provided is invalid!</p>";
+                    }
                     else{
                 ?>
                 <form action="register/" method="post" class="submission-form text-center">
@@ -80,21 +95,6 @@
                             }
                             else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "format")){
                                 echo "<p class=\"white bold margin-top-only\">The email you entered is invalid!</p>";
-                            }
-                            else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "database")){
-                                echo "<p class=\"white bold margin-top-only\">Internal error, please write to <a href=\"mailto:contact@kthack.com\" class=\"link-white bold\">contact@kthack.com</a>!</p>";
-                            }
-                            else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "registered")){
-                                echo "<p class=\"white bold margin-top-only\">You have already subscribed, but the email hasn't been confirmed yet, check the spam folder!</p>";
-                            }
-                            else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "confirmed")){
-                                echo "<p class=\"white bold margin-top-only\">You are already subscribed and confirmed!</p>";
-                            }
-                            else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "code")){
-                                echo "<p class=\"white bold margin-top-only\">The link provided is invalid!</p>";
-                            }
-                            else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "activated")){
-                                echo "<p class=\"white bold margin-top-only\">Your email has been confirmed, thank-you!</p>";
                             }
                             $_SESSION["status"] = "initial";
                         ?>
