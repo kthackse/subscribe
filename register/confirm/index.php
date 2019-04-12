@@ -35,8 +35,8 @@ if($result->num_rows == 0){
 
 $result = $result->fetch_assoc();
 
-$sql = "INSERT INTO confirmed (email, hash)
-VALUES ('" . $result["email"] . "', '" . $result["hash"] . "');";
+$sql = "INSERT INTO confirmed (email, hash, created)
+VALUES ('" . $result["email"] . "', '" . $result["hash"] . "', '" . $result["created"] . "');";
 
 if($conn->query($sql) !== TRUE){
     $_SESSION["status"] = "database";
