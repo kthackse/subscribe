@@ -96,7 +96,6 @@
                             else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "format")){
                                 echo "<p class=\"white bold margin-top-only\">The email you entered is invalid!</p>";
                             }
-                            $_SESSION["status"] = "initial";
                         ?>
 		                </div>
 		            </div>
@@ -108,6 +107,7 @@
                 </form>
                 <?php
                     }
+                    $_SESSION["status"] = "initial";
                 ?>
             </div>
 	      	<div class="col-sm-3">
