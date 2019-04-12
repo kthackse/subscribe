@@ -2,7 +2,7 @@
 session_start();
 
 include "../config/config.php";
-require 'vendor/autoload.php';
+require "../vendor/autoload.php";
 
 $email = "";
 if(isset($_POST["email"])){
