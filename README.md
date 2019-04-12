@@ -17,8 +17,8 @@
 3. Run `mysql < db/db.sql` to create the database
 4. Create user and set the password with `CREATE USER '[USERNAME]'@'localhost' IDENTIFIED BY '[PASSWORD]';`
 5. Give privileges to the user with `GRANT ALL PRIVILEGES ON subscribe.* TO '[USERNAME]'@'localhost'; FLUSH PRIVILEGES;`
-6. Move `config/config.php.example` to `config/config.php` and modify it with the corresponding `[USERNAME]` and `[PASSWORD]`
-7. Update the Sendgrid API key in `config/config.php` with your own
+6. Move `.env.example` to `.env` and modify it with the corresponding `[USERNAME]` and `[PASSWORD]`
+7. Update the Sendgrid API key in `.env` with your own
 
 ## License
 MIT © KTH Artificial Intelligence Society

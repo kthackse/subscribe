@@ -1,8 +1,10 @@
 <?php
 session_start();
 
-include "../config/config.php";
 require "../vendor/autoload.php";
+
+$dotenv = Dotenv\Dotenv::create("../");
+$dotenv->load();
 
 $email = "";
 if(isset($_POST["email"])){
@@ -32,7 +34,7 @@ else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 
 $hash = bin2hex(random_bytes(32));
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli(getenv('DB_SERVER'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
 if($conn->connect_error){
     $_SESSION["status"] = "database";
     header("Location: ../");
@@ -78,7 +80,7 @@ $email->setFrom("noreply@kthack.com", "KTHack");
 $email->setSubject($subject);
 $email->addTo($email, "Hacker");
 $email->addContent("text/html", $template);
-$sendgrid = new \SendGrid($sendgrid_key);
+$sendgrid = new \SendGrid(getenv('SENDGRID_KEY'));
 try {
     $response = $sendgrid->send($email);
     print $response->statusCode() . "\n";
