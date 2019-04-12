@@ -1,10 +1,16 @@
 <br>
 <p align="center">
-  <img alt="KTHAIS" src="assets/img/logo.png" width="500"/>
+  <img alt="KTHAIS" src="assets/img/logo.png" width="250px"/>
 </p>
 <br>
 
 # KTHack subscribe page
+
+<br>
+<p align="center">
+  <img alt="KTHAIS" src="overview.png" width="100%"/>
+</p>
+<br>
 
 ## Requirements
 * PHP 7.2 or greater
