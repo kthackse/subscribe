@@ -75,8 +75,8 @@ $template = str_replace('{{confirm_hash}}', $hash, $template);
 
 $email = new \SendGrid\Mail\Mail(); 
 $email->setFrom("noreply@kthack.com", "KTHack");
-$email->setSubject($subject, "Hacker");
-$email->addTo($email);
+$email->setSubject($subject);
+$email->addTo($email, "Hacker");
 $email->addContent("text/html", $template);
 $sendgrid = new \SendGrid($sendgrid_key);
 try {
