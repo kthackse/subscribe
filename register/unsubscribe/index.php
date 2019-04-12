@@ -27,10 +27,14 @@ if($conn->connect_error){
 $sql = "SELECT * FROM confirmed WHERE hash = '" . $code . "';";
 $result = $conn->query($sql);
 if($result->num_rows == 0){
-    $_SESSION["status"] = "code";
-    $conn->close();
-    header("Location: ../../");
-    die();
+    $sql = "SELECT * FROM registered WHERE hash = '" . $code . "';";
+    $result = $conn->query($sql);
+    if($result->num_rows == 0){
+        $_SESSION["status"] = "code";
+        $conn->close();
+        header("Location: ../../");
+        die();
+    }
 }
 
 $result = $result->fetch_assoc();
