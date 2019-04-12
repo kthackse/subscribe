@@ -39,7 +39,7 @@ if($result->num_rows == 0){
 
 $result = $result->fetch_assoc();
 $updated = $result["created"];
-if(empty($result["updated"])){
+if(!isset($result["updated"])){
     $updated = $result["updated"];
 }
 
