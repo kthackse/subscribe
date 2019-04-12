@@ -61,7 +61,7 @@
                     }
                     else{
                 ?>
-                <form action="register" method="post" class="submission-form text-center">
+                <form action="register/" method="post" class="submission-form text-center">
 		            <div class="row">
 	      	            <div class="col-sm-12">
                             <input type="text" name="email" id="email" placeholder="example@kthack.com">
