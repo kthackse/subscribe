@@ -38,12 +38,13 @@ if($result->num_rows == 0){
 }
 
 $result = $result->fetch_assoc();
-if(!array_key_exists("updated", $result)){
-    $result["updated"] = $result["created"];
+$updated = $result["created"];
+if(empty($result["updated"])){
+    $updated = $result["updated"];
 }
 
 $sql = "INSERT INTO unsubscribed (email, hash, created, updated)
-VALUES ('" . $result["email"] . "', '" . $result["hash"] . "', '" . $result["created"] . "', '" . $result["updated"] . "');";
+VALUES ('" . $result["email"] . "', '" . $result["hash"] . "', '" . $result["created"] . "', '" . $updated . "');";
 
 if($conn->query($sql) !== TRUE){
     $_SESSION["status"] = "database";
