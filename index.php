@@ -15,16 +15,16 @@
     <meta property="og:title" content="Subscribe | KTHack"/>
     <meta property="og:site_name" content="KTHack"/>
     <meta property="og:description" content="KTH hackathon, organised by KTH Artificial Intelligence Society"/>
-    <meta property="og:image" content="http://kthack.com/overview.png">
-	<meta property="og:image:secure_url" content="https://kthack.com/overview.png">
+    <meta property="og:image" content="http://soon.kthack.com/overview.png">
+	<meta property="og:image:secure_url" content="https://soon.kthack.com/overview.png">
 	<meta property="og:url" content="http://kthack.com">
 
     <!--TWITTER DESCRIPTION -->
 	<meta name="twitter:card" content="summary">
-    
+
 	<meta name="twitter:title" content="KTHack">
 	<meta name="twitter:description" content="KTH hackathon, organised by KTH Artificial Intelligence Society">
-	<meta name="twitter:image" content="http://kthack.com/overview.png">
+	<meta name="twitter:image" content="http://soon.kthack.com/overview.png">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
