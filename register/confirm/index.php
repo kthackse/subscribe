@@ -3,7 +3,7 @@ session_start();
 
 require "../../vendor/autoload.php";
 
-$dotenv = Dotenv\Dotenv::create("../");
+$dotenv = Dotenv\Dotenv::create("../../");
 $dotenv->load();
 
 $code = "";
