@@ -38,6 +38,9 @@ if($result->num_rows == 0){
 }
 
 $result = $result->fetch_assoc();
+if(empty($result["updated"])){
+    $result["updated"] = $result["created"];
+}
 
 $sql = "INSERT INTO unsubscribed (email, hash, created, updated)
 VALUES ('" . $result["email"] . "', '" . $result["hash"] . "', '" . $result["created"] . "', '" . $result["updated"] . "');";
