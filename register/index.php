@@ -2,6 +2,7 @@
 session_start();
 
 include "../config/config.php";
+require 'vendor/autoload.php';
 
 $email = "";
 if(isset($_POST["email"])){
@@ -69,14 +70,25 @@ if($conn->query($sql) !== TRUE){
 $conn->close();
 
 $subject = 'KTHack 2020 - Subscribe';
-$headers = 'From: noreply@kthack.com' . "\r\n" .
-    'Reply-To: contact@kthack.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-
 $template = file_get_contents("templates/confirm.html");
 $template = str_replace('{{confirm_hash}}', $hash, $template);
 
-mail($email, $subject, $template, $headers);
+$email = new \SendGrid\Mail\Mail(); 
+$email->setFrom("noreply@kthack.com", "KTHack");
+$email->setSubject($subject);
+$email->addTo($email);
+$email->addContent("text/html", $template);
+$sendgrid = new \SendGrid($sendgrid_key);
+try {
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "\n";
+    print_r($response->headers());
+    print $response->body() . "\n";
+} catch (Exception $e) {
+    $_SESSION["status"] = "database";
+    header("Location: ../");
+    die();
+}
 
 $_SESSION["status"] = "done";
 header("Location: ../");

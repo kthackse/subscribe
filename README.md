@@ -8,6 +8,7 @@
 
 ## Requirements
 * PHP 7.2 or greater
+* Composer
 * MySQL
 
 ## Deploy 

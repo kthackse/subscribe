@@ -3,4 +3,5 @@ $servername = "localhost";
 $username = "[USERNAME]";
 $password = "[PASSWORD]";
 $dbname = "subscribe";
+$sendgrid_key = "[SENDGRID_KEY]";
 ?>
