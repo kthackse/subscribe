@@ -27,6 +27,7 @@ if($conn->connect_error){
 $sql = "SELECT * FROM confirmed WHERE hash = '" . $code . "';";
 $result = $conn->query($sql);
 $updated = "";
+$confirmed = TRUE;
 if($result->num_rows == 0){
     $sql = "SELECT * FROM registered WHERE hash = '" . $code . "';";
     $result = $conn->query($sql);
@@ -39,6 +40,7 @@ if($result->num_rows == 0){
     else{
         $result = $result->fetch_assoc();
         $updated = $result["created"];
+        $confirmed = FALSE;
     }
 }
 else{
@@ -57,6 +59,9 @@ if($conn->query($sql) !== TRUE){
 }
 
 $sql = "DELETE FROM confirmed WHERE email = '" . $result["email"] . "';";
+if(!$confirmed){
+    $sql = "DELETE FROM registered WHERE email = '" . $result["email"] . "';";
+}
 
 if($conn->query($sql) !== TRUE){
     $_SESSION["status"] = "database";
