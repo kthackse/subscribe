@@ -56,7 +56,7 @@
                 <?php
                     session_start();
                     if(isset($_SESSION["status"]) && ($_SESSION["status"] == "done")){
-                        echo "<p class=\"white bold margin-0 text-center\">Thank-you for registering, remember to check your inbox and confirm your email!</p>";
+                        echo "<p class=\"white bold margin-0 text-center\">Thank-you for registering, remember to check your inbox (and spam) to confirm your email!</p>";
                         $_SESSION["status"] = "initial";
                     }
                     else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "activated")){
