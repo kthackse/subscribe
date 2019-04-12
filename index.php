@@ -74,6 +74,9 @@
                     else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "code")){
                         echo "<p class=\"white bold margin-0 text-center\">The link provided is invalid!</p>";
                     }
+                    else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "unsubscribed")){
+                        echo "<p class=\"white bold margin-0 text-center\">You've been unsubscribed, we are sorry to hear that!</p>";
+                    }
                     else{
                 ?>
                 <form action="register/" method="post" class="submission-form text-center">
