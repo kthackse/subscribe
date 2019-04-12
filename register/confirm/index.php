@@ -29,7 +29,7 @@ $result = $conn->query($sql);
 if($result->num_rows == 0){
     $_SESSION["status"] = "code";
     $conn->close();
-    header("Location: ../");
+    header("Location: ../../");
     die();
 }
 
@@ -41,7 +41,7 @@ VALUES ('" . $result["email"] . "', '" . $result["hash"] . "', '" . $result["cre
 if($conn->query($sql) !== TRUE){
     $_SESSION["status"] = "database";
     $conn->close();
-    header("Location: ../");
+    header("Location: ../../");
     die();
 }
 
@@ -50,14 +50,14 @@ $sql = "DELETE FROM registered WHERE email = '" . $result["email"] . "';";
 if($conn->query($sql) !== TRUE){
     $_SESSION["status"] = "database";
     $conn->close();
-    header("Location: ../");
+    header("Location: ../../");
     die();
 }
 
 $conn->close();
 
 $_SESSION["status"] = "activated";
-header("Location: ../");
+header("Location: ../../");
 die();
 ?>
 
