@@ -45,6 +45,15 @@ if($conn->query($sql) !== TRUE){
     die();
 }
 
+$sql = "DELETE FROM registered WHERE email = '" . $result["email"] . "';";
+
+if($conn->query($sql) !== TRUE){
+    $_SESSION["status"] = "database";
+    $conn->close();
+    header("Location: ../");
+    die();
+}
+
 $conn->close();
 
 $_SESSION["status"] = "activated";
