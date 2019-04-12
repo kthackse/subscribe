@@ -52,7 +52,7 @@
             </div>
 	      	<div class="col-sm-6">
 				<h1 class="white bold text-center">KTHack 2020</h1>
-				<p class="white paragraph text-center">We are starting to organise KTH own hackathon which will take place sometime next January, subscribe to receive updates!</p>
+				<p class="white paragraph text-center">Don't miss the oportunity to take part into Sweden's first student hackathon, subscribe to receive updates!</p>
                 <?php
                     session_start();
                     if(isset($_SESSION["status"]) && ($_SESSION["status"] == "done")){
