@@ -33,6 +33,22 @@ if($result->num_rows == 0){
     die();
 }
 
-echo($result->fetch_assoc());
+$result = $result->fetch_assoc();
+
+$sql = "INSERT INTO confirmed (email, hash)
+VALUES ('" . $result["email"] . "', '" . $result["hash"] . "');";
+
+if($conn->query($sql) !== TRUE){
+    $_SESSION["status"] = "database";
+    $conn->close();
+    header("Location: ../");
+    die();
+}
+
+$conn->close();
+
+$_SESSION["status"] = "activated";
+header("Location: ../");
+die();
 ?>
 

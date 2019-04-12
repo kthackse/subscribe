@@ -93,6 +93,9 @@
                             else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "code")){
                                 echo "<p class=\"white bold margin-top-only\">The link provided is invalid!</p>";
                             }
+                            else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "activated")){
+                                echo "<p class=\"white bold margin-top-only\">Your email has been confirmed, thank-you!</p>";
+                            }
                             $_SESSION["status"] = "initial";
                         ?>
 		                </div>
