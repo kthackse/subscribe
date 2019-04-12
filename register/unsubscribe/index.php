@@ -26,17 +26,24 @@ if($conn->connect_error){
 
 $sql = "SELECT * FROM confirmed WHERE hash = '" . $code . "';";
 $result = $conn->query($sql);
-$updated = $result["updated"];
+$updated = "";
 if($result->num_rows == 0){
     $sql = "SELECT * FROM registered WHERE hash = '" . $code . "';";
     $result = $conn->query($sql);
-    $updated = $result["created"];
     if($result->num_rows == 0){
         $_SESSION["status"] = "code";
         $conn->close();
         header("Location: ../../");
         die();
     }
+    else{
+        $result = $result->fetch_assoc();
+        $updated = $result["created"];
+    }
+}
+else{
+    $result = $result->fetch_assoc();
+    $updated = $result["updated"];
 }
 
 $sql = "INSERT INTO unsubscribed (email, hash, created, updated)
