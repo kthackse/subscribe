@@ -17,7 +17,7 @@
     <meta property="og:description" content="KTH hackathon, organised by KTH Artificial Intelligence Society"/>
     <meta property="og:image" content="http://soon.kthack.com/overview.png">
 	<meta property="og:image:secure_url" content="https://soon.kthack.com/overview.png">
-	<meta property="og:url" content="http://kthack.com">
+	<meta property="og:url" content="http://soon.kthack.com">
 
     <!--TWITTER DESCRIPTION -->
 	<meta name="twitter:card" content="summary">
