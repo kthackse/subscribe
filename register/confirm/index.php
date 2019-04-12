@@ -24,6 +24,15 @@ if($conn->connect_error){
     die();
 }
 
+$sql = "SELECT * FROM confirmed WHERE hash = '" . $code . "';";
+$result = $conn->query($sql);
+if($result->num_rows > 0){
+    $_SESSION["status"] = "confirmed";
+    $conn->close();
+    header("Location: ../../");
+    die();
+}
+
 $sql = "SELECT * FROM registered WHERE hash = '" . $code . "';";
 $result = $conn->query($sql);
 if($result->num_rows == 0){
