@@ -35,7 +35,7 @@ if($result->num_rows == 0){
 
 $result = $result->fetch_assoc();
 
-$sql = "INSERT INTO unregistered (email, hash, created, updated)
+$sql = "INSERT INTO unsubscribed (email, hash, created, updated)
 VALUES ('" . $result["email"] . "', '" . $result["hash"] . "', '" . $result["created"] . "', '" . $result["updated"] . "');";
 
 if($conn->query($sql) !== TRUE){
