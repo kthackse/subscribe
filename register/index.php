@@ -79,12 +79,13 @@ use SendGrid\Mail\From;
 use SendGrid\Mail\Mail;
 use SendGrid\Mail\To;
 
-$subject = 'KTHack 2020 - Subscribe';
+$subject = "Confirm your email to subscribe for KTHack 2020!";
 $fromEmail = "noreply@kthack.com";
+$fromName = "KTHack";
 $toEmail = $email;
 $htmlContent = $template;
 
-$from = new From($fromEmail);
+$from = new From($fromEmail, $fromName);
 $to = new To($toEmail);
 
 $content = new Content("text/html", $htmlContent);
