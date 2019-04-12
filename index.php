@@ -90,6 +90,9 @@
                             else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "confirmed")){
                                 echo "<p class=\"white bold margin-top-only\">You are already subscribed and confirmed!</p>";
                             }
+                            else if(isset($_SESSION["status"]) && ($_SESSION["status"] == "code")){
+                                echo "<p class=\"white bold margin-top-only\">The link provided is invalid!</p>";
+                            }
                             $_SESSION["status"] = "initial";
                         ?>
 		                </div>
