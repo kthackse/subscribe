@@ -71,25 +71,36 @@ if($conn->query($sql) !== TRUE){
 
 $conn->close();
 
-$subject = 'KTHack 2020 - Subscribe';
 $template = file_get_contents("templates/confirm.html");
 $template = str_replace('{{confirm_hash}}', $hash, $template);
 
-$email = new \SendGrid\Mail\Mail(); 
-$email->setFrom("noreply@kthack.com", "KTHack");
-$email->setSubject($subject);
-$email->addTo($email, "Hacker");
-$email->addContent("text/html", $template);
-$sendgrid = new \SendGrid(getenv('SENDGRID_KEY'));
-try {
-    $response = $sendgrid->send($email);
-    print $response->statusCode() . "\n";
-    print_r($response->headers());
-    print $response->body() . "\n";
-} catch (Exception $e) {
-    $_SESSION["status"] = "database";
-    header("Location: ../");
-    die();
+use SendGrid\Mail\Content;
+use SendGrid\Mail\From;
+use SendGrid\Mail\Mail;
+use SendGrid\Mail\To;
+
+$subject = 'KTHack 2020 - Subscribe';
+$fromEmail = "noreply@kthack.com";
+$toEmail = $email;
+$htmlContent = $template;
+
+$from = new From($fromEmail);
+$to = new To($toEmail);
+
+$content = new Content("text/html", $htmlContent);
+
+$mail = new Mail($from, $to, $subject);
+$mail->addContent($content);
+
+$sg = new SendGrid(getenv('SENDGRID_KEY'));
+
+$response = $sg->client->mail()->send()->post($mail);
+
+if($response->statusCode() == 202){
+    echo 'Mail sent!';
+}
+else{
+    echo 'Mail not sent!';
 }
 
 $_SESSION["status"] = "done";
