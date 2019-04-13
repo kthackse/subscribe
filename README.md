@@ -1,12 +1,10 @@
-<br>
 <p align="center">
   <img alt="KTHAIS" src="assets/img/logo.png" width="250px"/>
-</p>
-<br>
-
-# KTHack subscribe page
-
-<p align="center">
+  <br>
+  <br>
+  KTHack subscribe page
+  <br>
+  <br>
   <img alt="KTHAIS" src="overview.png" width="100%"/>
 </p>
 
