@@ -1,10 +1,8 @@
 <p align="center">
   <img alt="KTHAIS" src="assets/img/logo.png" width="250px"/>
-  <br>
-  <br>
-  <h3>KTHack subscribe page</h3>
-  <br>
-  <br>
+</p>
+<h3 align="center">KTHack subscribe page</h3>
+<p align="center">
   <img alt="KTHAIS" src="overview.png" width="100%"/>
 </p>
 
