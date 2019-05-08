@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/join.css?_=1554313746">
     <meta name="theme-color" content="#68a4cc">
     <meta name="author" content="KTHack">
-    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
     <link rel="icon" href="../favicon.png" type="image/png">
     <meta name="description" content="KTH hackathon, organised by KTH Artificial Intelligence Society">
 
