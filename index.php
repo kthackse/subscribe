@@ -22,7 +22,7 @@
     <!--TWITTER DESCRIPTION -->
 	<meta name="twitter:card" content="summary">
 
-	<meta name="twitter:title" content="KTHack">
+	<meta name="twitter:title" content="Subscribe | KTHack">
 	<meta name="twitter:description" content="KTH hackathon, organised by KTH Artificial Intelligence Society">
 	<meta name="twitter:image" content="http://soon.kthack.com/overview.png">
 
@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <title>KTHack | KTHAIS</title>
+    <title>Subscribe | KThack</title>
 </head>
 
 <body>

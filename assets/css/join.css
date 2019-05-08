@@ -1,0 +1,161 @@
+form label {color: #fff;
+float: right;
+vertical-align: middle;
+padding: 6px 0;text-align: right;}
+form input[type="text"]{
+float: right;
+width: 100%;
+}
+.join-subrow{margin-bottom: 10px;}
+.join-section{margin: 0 0 20px 0;}
+.join-row{margin-top: 25px;}
+.join-row-last{margin-top: 10px;}
+.join-button input{margin-left: auto;
+margin-right: auto;
+display: block;}
+.join-title{margin: 50px 0;}
+.join-form{background-color: #68A4CC;
+background-image: linear-gradient(175deg, #68A4CC 170px, #a0c6df 170.5px);
+margin-top: 100vh;
+margin-left: 0;
+margin-right: 0;
+width: 100%;
+padding-left: 0;
+padding-right: 0;}
+.join-form-row{margin-right: 0;
+margin-left: 0;
+padding: 0 5%;
+margin-bottom: 100px;}
+
+.radio label {
+    position: relative;
+    display: inline-block;
+    /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+    padding-top: 0;
+    padding-bottom: 0;
+cursor: auto;
+}
+
+.radio input[type="radio"] {
+    opacity: 0;
+    margin-left: 0;
+    z-index: 10;
+    height: 10px;
+    width: 10px;
+    cursor: pointer;
+}
+
+.radio label::before,
+.radio label::after {
+    position: absolute;
+    content: "";
+    
+    /*Needed for the line-height to take effect*/
+    display: inline-block;
+}
+
+/*Outer box of the fake checkbox*/
+.radio label::before{
+    height: 12.5px;
+    width: 12.5px;
+    
+    border: 1.75px solid #FAFAFA;
+    left: 0px;
+    
+    /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+     *to vertically center it.
+     */
+    top: 5px;
+}
+/*Checkmark of the fake checkbox*/
+.radio label::after {
+    height: 6px;
+    width: 8px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    
+    transform: rotate(-45deg);
+    
+    left: 2.5px;
+    top: 7px;
+}
+
+/*Hide the checkmark by default*/
+.radio input[type="radio"] + label::after {
+    content: none;
+}
+
+/*Unhide on the checked state*/
+.radio input[type="radio"]:checked + label::after {
+    content: "";
+}
+
+.radio-check label {
+    position: relative;
+    display: inline-block;
+    /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+    padding-top: 0;
+    padding-bottom: 0;
+cursor: auto;
+}
+
+.radio-check input[type="checkbox"] {
+    opacity: 0;
+left: 0;
+position: absolute;
+margin-left: 15px;
+    z-index: 10;
+    height: 10px;
+    width: 10px;
+    cursor: pointer;
+}
+
+.radio-check label::before,
+.radio-check label::after {
+    position: absolute;
+    content: "";
+    
+    /*Needed for the line-height to take effect*/
+    display: inline-block;
+}
+
+/*Outer box of the fake checkbox*/
+.radio-check label::before{
+    height: 12.5px;
+    width: 12.5px;
+    
+    border: 1.75px solid #FAFAFA;
+    left: 0px;
+    
+    /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+     *to vertically center it.
+     */
+    top: 5px;
+}
+/*Checkmark of the fake checkbox*/
+.radio-check label::after {
+    height: 6px;
+    width: 8px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    
+    transform: rotate(-45deg);
+    
+    left: 2.5px;
+    top: 7px;
+}
+
+/*Hide the checkmark by default*/
+.radio-check input[type="checkbox"] + label::after {
+    content: none;
+}
+
+/*Unhide on the checked state*/
+.radio-check input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+.radio-check label {padding-left: 20px;
+margin-bottom: 0;
+font-weight: 400;
+}
