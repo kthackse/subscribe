@@ -13,7 +13,7 @@
 
 ## Deploy 
 1. Clone repository to your computer with `git clone https://github.com/kthackais/subscribe && cd subscribe`
-2. Install PHP and MySQL if needed
+2. Install PHP and MySQL if needed, run `composer install`
 3. Run `mysql < db/db.sql` to create the database
 4. Create user and set the password with `CREATE USER '[USERNAME]'@'localhost' IDENTIFIED BY '[PASSWORD]';`
 5. Give privileges to the user with `GRANT ALL PRIVILEGES ON subscribe.* TO '[USERNAME]'@'localhost'; FLUSH PRIVILEGES;`

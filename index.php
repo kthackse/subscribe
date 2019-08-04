@@ -42,7 +42,7 @@
 	      	<div class="col-sm-3">
             </div>
 	      	<div class="col-sm-6">
-	      	    <a href=""><img src="assets/img/logo_white.png" class="logo"></a>
+	      	    <a href=""><img src="assets/img/logo_wh.png" class="logo"></a>
             </div>
 	      	<div class="col-sm-3">
             </div>
